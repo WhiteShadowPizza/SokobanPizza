@@ -304,6 +304,7 @@ public class Sokoban : MonoBehaviour
             if (counter >= MaxCount && isClear)
             {
                 move = false;
+                gameovertext.enabled = false;
                 cleartext.enabled = true;
             }
         }
@@ -355,6 +356,7 @@ public class Sokoban : MonoBehaviour
                 {
                     // 移動先が目的地ならブロック（目的地の上）の番号に更新
                     tileList[nextBlockPos.x, nextBlockPos.y] = TileType.BLOCK_ON_TARGET;
+                    counter++;
                 }
 
                 // プレイヤーの現在地のタイルの情報を更新
