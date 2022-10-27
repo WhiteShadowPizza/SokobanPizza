@@ -250,7 +250,12 @@ public class Sokoban : MonoBehaviour
     // 毎フレーム呼び出される
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             // 現在のシーンを再読み込み
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
